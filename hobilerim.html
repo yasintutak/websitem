@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hobilerim</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<style>
+body{margin:0;font-family:Arial;background:#0b1020;color:#eaf0ff;}
+.wrap{width:90%;margin:auto;padding:20px;}
+header{display:flex;justify-content:space-between;align-items:center;}
+nav a{color:white;text-decoration:none;margin-left:15px;}
+.card{margin-top:20px;padding:20px;background:rgba(255,255,255,0.08);border-radius:12px;}
+#map{height:400px;margin-top:15px;}
+ul{margin-top:15px;}
+li{margin-bottom:8px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h2>Hobilerim</h2>
+  <nav>
+    <a href="index.html">Hakkımda</a>
+    <a href="hobilerim.html">Hobilerim</a>
+    <a href="iletisim.html">İletişim</a>
+  </nav>
+</header>
+<div class="card">
+  <div id="map"></div>
+  <ul>
+    <li><b>Kayseri:</b> Kayak</li>
+    <li><b>Antalya:</b> Yüzme</li>
+    <li><b>İstanbul:</b> Turistik gezi</li>
+    <li><b>Ankara:</b> Yaşam ve iş hayatı</li>
+  </ul>
+</div>
+</div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+const map=L.map('map').setView([39.0,35.0],6);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+const places=[
+{city:"Kayseri",lat:38.7223,lon:35.4875},
+{city:"Antalya",lat:36.8969,lon:30.7133},
+{city:"İstanbul",lat:41.0082,lon:28.9784},
+{city:"Ankara",lat:39.9334,lon:32.8597}
+];
+places.forEach(p=>{L.marker([p.lat,p.lon]).addTo(map).bindPopup(p.city);});
+</script>
+</body>
+</html>

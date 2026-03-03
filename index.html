@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Hakkımda</title>
+
+<style>
+:root{
+  --bg1:#0b1020;
+  --bg2:#0f2447;
+  --card: rgba(255,255,255,0.08);
+  --stroke: rgba(255,255,255,0.14);
+  --text:#eaf0ff;
+  --shadow: 0 14px 40px rgba(0,0,0,0.35);
+  --r:18px;
+}
+
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(900px 500px at 12% 18%, rgba(125,211,252,0.22), transparent 60%),
+    linear-gradient(135deg, var(--bg1), var(--bg2));
+  min-height:100vh;
+}
+
+.wrap{
+  width:min(900px, 92vw);
+  margin:0 auto;
+  padding:30px 0 40px;
+}
+
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  margin-left:15px;
+}
+
+.main-card{
+  margin-top:30px;
+  padding:30px 20px;
+  background: var(--card);
+  border-radius: var(--r);
+  box-shadow: var(--shadow);
+  text-align:center;
+  animation: fadeIn 0.8s ease;
+}
+
+.profile{
+  width:170px;
+  height:170px;
+  border-radius:50%;
+  object-fit:cover;
+  border:2px solid var(--stroke);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+  margin-bottom:20px;
+}
+
+.earth{
+  width:240px;
+  margin-top:30px;
+  filter: drop-shadow(0 0 20px rgba(125,211,252,0.6));
+}
+
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(15px);}
+  to{opacity:1; transform:translateY(0);}
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrap">
+
+<header>
+  <h2>Kişisel Web Sayfam</h2>
+  <nav>
+    <a href="index.html">Hakkımda</a>
+    <a href="hobilerim.html">Hobilerim</a>
+    <a href="iletisim.html">İletişim</a>
+  </nav>
+</header>
+
+<div class="main-card">
+
+  <img src="images/profil.jpg" alt="Profil Fotoğrafı" class="profile">
+
+  <h3>Hakkımda</h3>
+  <p>
+    Harita Mühendisi olarak bir kamu kurumunda çalışmaktayım.
+    Uzaktan algılama, fotogrametri, coğrafi bilgi sistemleri,
+    yapay zeka ve uydu teknolojileri alanında çalışmalar yürütüyorum.
+  </p>
+  <p>
+    Mekânsal veri analizi ve web tabanlı harita uygulamaları geliştiriyorum.
+  </p>
+
+  <img src="images/earth.gif" alt="Dönen Dünya" class="earth">
+
+</div>
+
+</div>
+</body>
+</html>
